@@ -74,6 +74,7 @@ public class VideoFragment extends Fragment {
                     videoView.start();
                     videoView.setOnCompletionListener(mListener);
                     progress = 0;
+
                 } else {
 //                    progress = videoView.getCurrentPosition();
                     videoView.setOnCompletionListener(null);

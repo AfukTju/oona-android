@@ -15,7 +15,7 @@
         android:layout_height="50dp"
         android:layout_gravity="top"
         android:layout_margin="50dp"
-        android:background="#FFFF00" />
+        android:src="@drawable/ic_hamburger" />
 
     <ImageView
         android:id="@+id/ivLogo"
