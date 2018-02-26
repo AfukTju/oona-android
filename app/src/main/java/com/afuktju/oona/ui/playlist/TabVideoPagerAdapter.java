@@ -2,7 +2,7 @@ package com.afuktju.oona.ui.playlist;
 
 import android.content.Context;
 import android.support.v4.view.PagerAdapter;
-import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -20,6 +20,7 @@ public class TabVideoPagerAdapter extends PagerAdapter {
     private String values[][];
     public final static int ALPHA_STATE = 0;
     public final static int BETA_STATE = 1;
+    public final static int GRID_SIZE = 3;
 
     public TabVideoPagerAdapter(Context context, String values[][]) {
         mContext = context;
@@ -31,9 +32,8 @@ public class TabVideoPagerAdapter extends PagerAdapter {
         LayoutInflater inflater = LayoutInflater.from(mContext);
         ViewGroup layout = (ViewGroup) inflater.inflate(R.layout.tab_video_ch, collection, false);
         RecyclerView rvItems = layout.findViewById(R.id.rvItems);
-        LinearLayoutManager layoutManager
-                = new LinearLayoutManager(mContext, LinearLayoutManager.HORIZONTAL, false);
-        rvItems.setLayoutManager(layoutManager);
+
+        rvItems.setLayoutManager(new GridLayoutManager(mContext,GRID_SIZE));
         TabVideoItemAdapter adapter = new TabVideoItemAdapter(values[position]);
         rvItems.addItemDecoration(new SpacesItemDecoration((int) mContext.getResources().getDimension(R.dimen.line_space_5dp)));
         rvItems.setAdapter(adapter);
