@@ -59,12 +59,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             }
         };
         vvMain.setOnTouchListener(onSwipeTouchListener);
-        vvMain.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
-            @Override
-            public void onPrepared(MediaPlayer mediaPlayer) {
-
-            }
-        });
         vvMain.seekTo(progress);
         vvMain.start();
     }
